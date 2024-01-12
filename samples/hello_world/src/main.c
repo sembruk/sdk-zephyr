@@ -6,8 +6,13 @@
 
 #include <zephyr/kernel.h>
 
+#define SLEEP_TIME_MS   1000
+
 int main(void)
 {
-	printk("Hello World! %s\n", CONFIG_BOARD);
+    while(1) {
+        printk("Hello World! %s\n", CONFIG_BOARD);
+        k_msleep(SLEEP_TIME_MS);
+    }
 	return 0;
 }
